@@ -4,8 +4,8 @@ set -euo pipefail
 ########################################
 # Configurações gerais
 ########################################
-DOTFILES_DIR="$HOME/dotfiles"
-BACKUP_DIR="$HOME/.dotfiles-backup/$(date +%Y%m%d_%H%M%S)"
+DOTFILES_DIR="$PWD"
+BACKUP_DIR="$PWD/.dotfiles-backup/$(date +%Y%m%d_%H%M%S)"
 
 ########################################
 # Utilitários
@@ -80,8 +80,9 @@ main() {
 
   ensure_dirs
 
-  link "$DOTFILES_DIR/zsh/.zshrc"        "$HOME/.zshrc"
-  link "$DOTFILES_DIR/nvim"              "$HOME/.config/nvim"
+  link "$DOTFILES_DIR/config/zsh/.zshrc"        "$HOME/.zshrc"
+  link "$DOTFILES_DIR/config/nvim"              "$HOME/.config/nvim"
+  link "$DOTFILES_DIR/config/starship.toml"     "$HOME/.config/starship.toml"
 
   log "Bootstrap finalizado com sucesso"
 }
