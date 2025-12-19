@@ -37,8 +37,8 @@ export TERM="tmux-256color"
 #Directories
 
 
-export LAB="$HOME/Homelab"
 export REPOS="$HOME/Repos"
+export HOMELAB="$REPOS/homelab"
 export ICLOUD="$HOME/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Second\ Brain/"
 
 #~~~~~~~~~~PATH~~~~~~~~~~~~
@@ -60,7 +60,7 @@ alias repos="cd $REPOS"
 
 # Homelab
 
-alias homelab="cd $LAB/homelab"
+alias homelab="cd $HOMELAB"
 alias notes="cd $ICLOUD"
 
 
