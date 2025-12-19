@@ -57,6 +57,7 @@ alias gcm="git commit -m"
 # Repos
 
 alias repos="cd $REPOS"
+alias dot="cd $REPOS/dotfiles"
 
 # Homelab
 
@@ -67,7 +68,8 @@ alias notes="cd $ICLOUD"
 # Kubernetes 
 
 alias k=kubectl
-
+alias ctx="kubectx"
+alias ns="kubens"
 
 # Fastfetch
 fastfetch
