@@ -71,5 +71,11 @@ alias k=kubectl
 alias ctx="kubectx"
 alias ns="kubens"
 
-# Fastfetch
-fastfetch
+# Claude
+
+if [ -f ~/Repos/dotfiles/config/zsh/zsh-claude ]; then
+  source ~/Repos/dotfiles/config/zsh/zsh-claude
+fi
+
+
+
