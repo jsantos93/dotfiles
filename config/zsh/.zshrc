@@ -68,8 +68,8 @@ alias notes="cd $ICLOUD"
 # Kubernetes 
 
 alias k=kubectl
-alias ctx="kubectx"
-alias ns="kubens"
+alias kc="kubectx"
+alias kn="kubens"
 
 # Claude
 
