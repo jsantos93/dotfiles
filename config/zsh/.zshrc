@@ -40,10 +40,11 @@ export TERM="tmux-256color"
 export REPOS="$HOME/Repos"
 export HOMELAB="$REPOS/homelab"
 export ICLOUD="$HOME/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Second\ Brain/"
+export SCRIPTS="$HOME/.config/scripts"
 
-#~~~~~~~~~~PATH~~~~~~~~~~~~
+#~~~~~~~~~PATH~~~~~~~~~~~~
 
-export PATH="$HOME/Scripts:$PATH"
+export PATH="$HOME/.config/scripts:$PATH"
 
 #~~~~~~~~~~Alias~~~~~~~~~~ 
 alias ls="ls --color=auto"
@@ -58,6 +59,7 @@ alias gcm="git commit -m"
 
 alias repos="cd $REPOS"
 alias dot="cd $REPOS/dotfiles"
+alias scripts="cd $SCRIPTS"
 
 # Homelab
 
