@@ -75,9 +75,18 @@ alias kn="kubens"
 
 # Claude
 
+alias "?"="noglob ?"
+
 if [ -f ~/Repos/dotfiles/config/zsh/zsh-claude ]; then
   source ~/Repos/dotfiles/config/zsh/zsh-claude
 fi
 
 
+function '?' {
+  if [[ -z "$*" ]]; then
+    echo "Usage: ? <prompt>"
+    return 1
+  fi
 
+  claude -p "$*"
+}
