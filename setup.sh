@@ -83,6 +83,7 @@ main() {
   link "$DOTFILES_DIR/config/zsh/.zshrc"        "$HOME/.zshrc"
   link "$DOTFILES_DIR/config/nvim"              "$HOME/.config/nvim"
   link "$DOTFILES_DIR/config/starship.toml"     "$HOME/.config/starship.toml"
+  link "$DOTFILES_DIR/scripts"                  "$HOME/.config/scripts"
 
   log "Bootstrap finalizado com sucesso"
 }
