@@ -74,7 +74,8 @@ alias kc="kubectx"
 alias kn="kubens"
 
 # Claude
-
+#
+alias alfred="cd $ICLOUD/PersonalAssistent"
 alias "?"="noglob ?"
 
 if [ -f ~/Repos/dotfiles/config/zsh/zsh-claude ]; then
