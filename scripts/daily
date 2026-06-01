@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+
+nvim /Users/jonathancoutinho/Library/Mobile\ Documents/iCloud\~md\~obsidian/Documents/Second\ Brain/Daily\ Notes/$(date +'%d-%m-%Y').md
