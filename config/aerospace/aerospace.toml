@@ -100,9 +100,6 @@ automatically-unhide-macos-hidden-apps = true
     # '''
 
     # App shortcuts
-    alt-t = 'exec-and-forget open -a /Applications/Ghostty.app'    
-
-
 
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#layout
@@ -131,8 +128,9 @@ automatically-unhide-macos-hidden-apps = true
     alt-3 = 'workspace 3'
     alt-4 = 'workspace 4'
     alt-5 = 'workspace 5'
-    alt-6 = 'workspace 6'
-    alt-7 = 'workspace 7'
+    alt-b = 'workspace B' # Browser
+    alt-t = 'workspace T' # Terminal
+    alt-w = 'workspace W' # WhatsApp
 
     # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
     alt-shift-1 = 'move-node-to-workspace 1'
@@ -175,11 +173,21 @@ automatically-unhide-macos-hidden-apps = true
 
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace 2'
+run = [
+  'move-node-to-workspace T',
+  'layout tiling'
+]
+
+[[on-window-detected]]
+if.app-id = 'company.thebrowser.Browser'
+run = ['move-node-to-workspace B']
 
 [[on-window-detected]]
 if.app-id = 'com.tinyspeck.slackmacgap'
 run = 'move-node-to-workspace 3'
 
+[[on-window-detected]]
+if.app-id = 'net.whatsapp.WhatsApp'
+run = 'move-node-to-workspace W'
 
 
