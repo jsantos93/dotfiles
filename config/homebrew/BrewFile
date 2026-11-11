@@ -1,0 +1,9 @@
+brew "fastfetch"
+brew "herdr"
+
+
+brew "neovim"
+brew "mole"
+
+cask "aerospace"
+cask "ghostty"
