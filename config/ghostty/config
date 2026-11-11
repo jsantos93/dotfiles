@@ -1,7 +1,9 @@
 theme = catppuccin-mocha
+
+background-blur-radius = 20
+background-opacity = 0.8
+
 font-family = "Hack Nerd Font Mono"
-font-family-bold = "Hack Nerd Font Mono Bold"
 font-size = 16
 window-height=510
 window-width=1640
-background-blur-radius = 20
