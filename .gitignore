@@ -1,3 +1,4 @@
 .config/nvim/plugin/packer_compiled.lua
 zsh-claude
 .DS_Store
+config/nvim/lazy-lock.json
