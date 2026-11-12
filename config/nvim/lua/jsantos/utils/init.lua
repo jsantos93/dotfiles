@@ -1,1 +1,3 @@
-return {}
+return {
+	editor = require("jsantos.utils.editor"),
+}
