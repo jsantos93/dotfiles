@@ -7,6 +7,8 @@ vim.cmd.colorscheme("solarized-osaka")
 require("mini.icons").setup()
 MiniIcons.mock_nvim_web_devicons()
 
+Jsantos.tabline.setup()
+
 require("tiny-cmdline").setup({
 	position = { y = "20%" },
 })
