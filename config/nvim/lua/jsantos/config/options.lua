@@ -49,3 +49,30 @@ opt.splitright = true
 opt.foldmethod = "expr"
 opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 opt.foldlevel = 99
+
+require("vim._core.ui2").enable({
+	msg = {
+		target = "msg",
+		targets = {
+			typed_cmd = "cmd",
+			search_count = "cmd",
+			search_cmd = "cmd",
+			completion = "cmd",
+			wildlist = "cmd",
+			confirm = "cmd",
+			emsg = "pager",
+			echoerr = "pager",
+			lua_error = "pager",
+			rpc_error = "pager",
+			list_cmd = "pager",
+			verbose = "pager",
+			shell_cmd = "pager",
+			shell_out = "pager",
+			shell_err = "pager",
+			shell_ret = "pager",
+			progress = "pager",
+		},
+		msg = { height = 0.3, timeout = 5000 },
+		pager = { height = 0.5 },
+	},
+})
