@@ -14,6 +14,15 @@ local function label(buf)
 		return "[No Name]"
 	end
 
+	local dir = path:match("^oil://(.*)")
+	if dir then
+		dir = vim.fn.fnamemodify(dir, ":~"):gsub("/$", "")
+		if vim.fn.strchars(dir) > 20 then
+			dir = "…" .. vim.fn.strcharpart(dir, vim.fn.strchars(dir) - 17)
+		end
+		return dir
+	end
+
 	local name = vim.fn.fnamemodify(path, ":t")
 	if vim.fn.strchars(name) > 20 then
 		name = vim.fn.strcharpart(name, 0, 17) .. "…"
