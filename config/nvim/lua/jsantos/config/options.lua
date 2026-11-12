@@ -43,3 +43,9 @@ opt.undodir = vim.fn.expand("~/.cache/nvim/undodir")
 opt.updatetime = 300
 opt.timeoutlen = 500
 opt.ttimeoutlen = 0
+
+opt.splitbelow = true
+opt.splitright = true
+opt.foldmethod = "expr"
+opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+opt.foldlevel = 99
