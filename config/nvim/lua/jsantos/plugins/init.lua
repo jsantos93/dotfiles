@@ -18,9 +18,13 @@ vim.pack.add({
 	"https://github.com/folke/snacks.nvim",
 	"https://github.com/stevearc/oil.nvim",
 	{ src = "https://github.com/nvim-treesitter/nvim-treesitter", version = "main" },
+	"https://github.com/mason-org/mason.nvim",
+	"https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim",
+	"https://github.com/neovim/nvim-lspconfig",
 })
 
 require("jsantos.plugins.ui")
 require("jsantos.plugins.navigation")
 require("jsantos.plugins.syntax")
+require("jsantos.plugins.code")
 require("jsantos.plugins.keymaps")
