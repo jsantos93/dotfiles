@@ -20,15 +20,48 @@ require("mason-tool-installer").setup({
 	run_on_start = true,
 })
 
+require("blink.cmp").setup({
+	keymap = { preset = "enter" },
+	completion = {
+		accept = { auto_brackets = { enabled = true } },
+		documentation = { auto_show = true, auto_show_delay_ms = 200 },
+		menu = {
+			draw = {
+				treesitter = { "lsp" },
+				components = {
+					kind_icon = {
+						text = function(ctx)
+							return MiniIcons.get("lsp", ctx.kind) .. ctx.icon_gap
+						end,
+						highlight = function(ctx)
+							return select(2, MiniIcons.get("lsp", ctx.kind))
+						end,
+					},
+				},
+			},
+		},
+	},
+	cmdline = {
+		completion = {
+			menu = {
+				auto_show = function()
+					return vim.fn.getcmdtype() == ":"
+				end,
+			},
+			list = { selection = { preselect = false } },
+		},
+	},
+})
+
 vim.lsp.config("*", {
-	capabilities = {
+	capabilities = require("blink.cmp").get_lsp_capabilities({
 		workspace = {
 			fileOperations = {
 				didRename = true,
 				willRename = true,
 			},
 		},
-	},
+	}),
 })
 
 vim.lsp.enable({ "lua_ls", "vtsls", "eslint", "oxlint", "rust_analyzer", "copilot", "ty" })
