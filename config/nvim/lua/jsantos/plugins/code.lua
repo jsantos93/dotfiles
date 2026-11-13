@@ -32,3 +32,19 @@ vim.lsp.config("*", {
 })
 
 vim.lsp.enable({ "lua_ls", "vtsls", "eslint", "oxlint", "rust_analyzer", "copilot", "ty" })
+
+local icons = Jsantos.icons.diagnostics
+vim.diagnostic.config({
+	underline = true,
+	update_in_insert = false,
+	severity_sort = true,
+	virtual_text = { prefix = "●", source = "if_many" },
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = icons.Error,
+			[vim.diagnostic.severity.WARN] = icons.Warn,
+			[vim.diagnostic.severity.HINT] = icons.Hint,
+			[vim.diagnostic.severity.INFO] = icons.Info,
+		},
+	},
+})
