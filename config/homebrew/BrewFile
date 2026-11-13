@@ -1,7 +1,8 @@
 brew "fastfetch"
 brew "herdr"
 
-
+brew "neovim"
+brew "tree-sitter-cli"
 brew "neovim"
 brew "mole"
 
