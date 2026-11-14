@@ -23,10 +23,12 @@ vim.pack.add({
 	"https://github.com/neovim/nvim-lspconfig",
 	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
 	"https://github.com/nvim-mini/mini.pairs",
+	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
 })
 
 require("jsantos.plugins.ui")
 require("jsantos.plugins.navigation")
 require("jsantos.plugins.syntax")
 require("jsantos.plugins.code")
+require("jsantos.plugins.markdown")
 require("jsantos.plugins.keymaps")
