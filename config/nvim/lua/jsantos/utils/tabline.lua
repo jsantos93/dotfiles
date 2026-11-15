@@ -58,11 +58,12 @@ function M.render()
 end
 
 function M.setup()
-	local c = require("solarized-osaka.colors").setup()
-	vim.api.nvim_set_hl(0, "JsantosTabActive", { fg = c.base4, bg = c.yellow, bold = true })
-	vim.api.nvim_set_hl(0, "JsantosTabActiveSep", { fg = c.yellow, bg = "NONE" })
-	vim.api.nvim_set_hl(0, "JsantosTabInactive", { fg = c.base0, bg = c.base02 })
-	vim.api.nvim_set_hl(0, "JsantosTabInactiveSep", { fg = c.base02, bg = "NONE" })
+	local config = vim.fn["everforest#get_configuration"]()
+	local p = vim.fn["everforest#get_palette"](config.background, config.colors_override)
+	vim.api.nvim_set_hl(0, "JsantosTabActive", { fg = p.bg0[1], bg = p.yellow[1], bold = true })
+	vim.api.nvim_set_hl(0, "JsantosTabActiveSep", { fg = p.yellow[1], bg = "NONE" })
+	vim.api.nvim_set_hl(0, "JsantosTabInactive", { fg = p.fg[1], bg = p.bg2[1] })
+	vim.api.nvim_set_hl(0, "JsantosTabInactiveSep", { fg = p.bg2[1], bg = "NONE" })
 	vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE" })
 
 	vim.o.showtabline = 1

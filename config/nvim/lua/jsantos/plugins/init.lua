@@ -10,7 +10,7 @@ vim.api.nvim_create_autocmd("PackChanged", {
 })
 
 vim.pack.add({
-	"https://github.com/craftzdog/solarized-osaka.nvim",
+	"https://github.com/sainnhe/everforest",
 	"https://github.com/rachartier/tiny-cmdline.nvim",
 	"https://github.com/nvim-mini/mini.icons",
 	"https://github.com/nvim-lualine/lualine.nvim",

@@ -1,8 +1,6 @@
-require("solarized-osaka").setup({
-	style = "vivid",
-	transparent = true,
-})
-vim.cmd.colorscheme("solarized-osaka")
+vim.o.background = "dark"
+vim.g.everforest_transparent_background = 1
+vim.cmd.colorscheme("everforest")
 
 require("mini.icons").setup()
 MiniIcons.mock_nvim_web_devicons()
