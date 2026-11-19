@@ -1,0 +1,73 @@
+local M = {}
+
+local left_sep = "\u{E0BA}"
+local right_sep = "\u{E0B8}"
+local padding = "   "
+
+local function label(buf)
+	if vim.bo[buf].buftype == "terminal" then
+		return "[Terminal]"
+	end
+
+	local path = vim.api.nvim_buf_get_name(buf)
+	if path == "" then
+		return "[No Name]"
+	end
+
+	local dir = path:match("^oil://(.*)")
+	if dir then
+		dir = vim.fn.fnamemodify(dir, ":~"):gsub("/$", "")
+		if vim.fn.strchars(dir) > 20 then
+			dir = "…" .. vim.fn.strcharpart(dir, vim.fn.strchars(dir) - 17)
+		end
+		return dir
+	end
+
+	local name = vim.fn.fnamemodify(path, ":t")
+	if vim.fn.strchars(name) > 20 then
+		name = vim.fn.strcharpart(name, 0, 17) .. "…"
+	end
+	return MiniIcons.get("file", path) .. " " .. name
+end
+
+function M.render()
+	local current = vim.api.nvim_get_current_tabpage()
+	local parts = {}
+
+	for _, tab in ipairs(vim.api.nvim_list_tabpages()) do
+		local buf = vim.api.nvim_win_get_buf(vim.api.nvim_tabpage_get_win(tab))
+		local hl = tab == current and "JsantosTabActive" or "JsantosTabInactive"
+		local text = label(buf)
+		if vim.bo[buf].modified then
+			text = "[+] " .. text
+		end
+
+		table.insert(parts, ("%%#%sSep#%s%%#%s#%s%s%s%%#%sSep#%s"):format(
+			hl,
+			left_sep,
+			hl,
+			padding,
+			text:gsub("%%", "%%%%"),
+			padding,
+			hl,
+			right_sep
+		))
+	end
+
+	return table.concat(parts) .. "%#TabLineFill#"
+end
+
+function M.setup()
+	local config = vim.fn["everforest#get_configuration"]()
+	local p = vim.fn["everforest#get_palette"](config.background, config.colors_override)
+	vim.api.nvim_set_hl(0, "JsantosTabActive", { fg = p.bg0[1], bg = p.yellow[1], bold = true })
+	vim.api.nvim_set_hl(0, "JsantosTabActiveSep", { fg = p.yellow[1], bg = "NONE" })
+	vim.api.nvim_set_hl(0, "JsantosTabInactive", { fg = p.fg[1], bg = p.bg2[1] })
+	vim.api.nvim_set_hl(0, "JsantosTabInactiveSep", { fg = p.bg2[1], bg = "NONE" })
+	vim.api.nvim_set_hl(0, "TabLineFill", { bg = "NONE" })
+
+	vim.o.showtabline = 1
+	vim.o.tabline = "%!v:lua.Jsantos.tabline.render()"
+end
+
+return M

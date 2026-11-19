@@ -1,0 +1,19 @@
+return {
+	settings = {
+		Lua = {
+			runtime = { version = "LuaJIT" },
+			workspace = {
+				checkThirdParty = false,
+				library = { vim.env.VIMRUNTIME },
+			},
+			hint = {
+				enable = true,
+				paramType = true,
+			},
+			diagnostics = {
+				globals = { "Jsantos", "Snacks", "MiniIcons" },
+				disable = { "missing-fields", "incomplete-signature-doc", "trailing-space" },
+			},
+		},
+	},
+}

@@ -1,9 +1,10 @@
 brew "fastfetch"
 brew "herdr"
 
-
 brew "neovim"
+brew "tree-sitter-cli"
 brew "mole"
 
 cask "aerospace"
 cask "ghostty"
+cask "ardia-browser/tap/ardia"
