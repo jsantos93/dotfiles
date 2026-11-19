@@ -7,3 +7,4 @@ brew "mole"
 
 cask "aerospace"
 cask "ghostty"
+cask "ardia-browser/tap/ardia"
