@@ -32,3 +32,5 @@ end, { desc = "Git hunks" })
 map("n", "sf", function()
 	require("oil").open_float(nil, { preview = {} })
 end, { desc = "File explorer" })
+
+map("n", "<leader>nn", "<cmd>NoNeckPain<cr>", { desc = "Toggle NoNeckPain" })

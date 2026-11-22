@@ -69,3 +69,5 @@ require("snacks").setup({
 	picker = { enabled = true },
 	scroll = { enabled = false },
 })
+
+require("no-neck-pain").setup({})

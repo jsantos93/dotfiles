@@ -24,6 +24,7 @@ vim.pack.add({
 	{ src = "https://github.com/saghen/blink.cmp", version = vim.version.range("^1") },
 	"https://github.com/nvim-mini/mini.pairs",
 	"https://github.com/MeanderingProgrammer/render-markdown.nvim",
+	"https://github.com/shortcuts/no-neck-pain.nvim",
 })
 
 require("jsantos.plugins.ui")
