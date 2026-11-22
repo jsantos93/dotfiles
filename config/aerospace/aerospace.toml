@@ -179,7 +179,7 @@ run = [
 ]
 
 [[on-window-detected]]
-  if.app-id = 'company.thebrowser.Browser'
+  if.app-id = 'com.ardia.browser'
   run = ['move-node-to-workspace B']
 
 [[on-window-detected]]
